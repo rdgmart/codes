@@ -95,14 +95,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APOS LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SN-vo-byI">
-                                <rect key="frame" x="157.5" y="410.5" width="99" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem Vindo... " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SN-vo-byI">
+                                <rect key="frame" x="156.5" y="44" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1o-b7-wUb">
-                                <rect key="frame" x="20" y="439" width="374" height="36"/>
+                                <rect key="frame" x="20" y="772" width="374" height="36"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -117,11 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="DkT-yJ-cRy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="t1o-b7-wUb" firstAttribute="top" secondItem="1SN-vo-byI" secondAttribute="bottom" constant="7.5" id="Gk7-jy-bd0"/>
+                            <constraint firstItem="DkT-yJ-cRy" firstAttribute="bottom" secondItem="t1o-b7-wUb" secondAttribute="bottom" constant="34" id="0kF-xG-Xk8"/>
+                            <constraint firstItem="1SN-vo-byI" firstAttribute="top" secondItem="DkT-yJ-cRy" secondAttribute="top" id="6vH-fg-OOK"/>
+                            <constraint firstItem="1SN-vo-byI" firstAttribute="centerX" secondItem="STu-c4-vKl" secondAttribute="centerX" id="825-Yd-5G3"/>
                             <constraint firstItem="t1o-b7-wUb" firstAttribute="leading" secondItem="DkT-yJ-cRy" secondAttribute="leading" constant="20" id="GxA-gJ-FM2"/>
                             <constraint firstItem="DkT-yJ-cRy" firstAttribute="trailing" secondItem="t1o-b7-wUb" secondAttribute="trailing" constant="20" id="evM-dz-7ib"/>
-                            <constraint firstItem="1SN-vo-byI" firstAttribute="centerY" secondItem="STu-c4-vKl" secondAttribute="centerY" id="s8B-yh-suE"/>
-                            <constraint firstItem="1SN-vo-byI" firstAttribute="centerX" secondItem="STu-c4-vKl" secondAttribute="centerX" id="uBz-A4-Rtk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eHP-8j-VIZ"/>
