@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="AutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEQ-MY-gO2">
+                                <rect key="frame" x="20" y="211" width="67" height="21.5"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlO-jS-6Wg">
+                                <rect key="frame" x="20" y="282.5" width="54" height="21.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-Te-K6l">
+                                <rect key="frame" x="20" y="240.5" width="374" height="34"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HaW-Mf-sIi">
+                                <rect key="frame" x="20" y="312" width="374" height="34"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rm_branco" translatesAutoresizingMaskIntoConstraints="NO" id="OpD-D7-ZAK">
+                                <rect key="frame" x="102.5" y="44" width="209" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="147" id="Nuv-xz-KZj"/>
+                                    <constraint firstAttribute="width" constant="209" id="p3D-Q6-EKh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-u1-UFE">
+                                <rect key="frame" x="20" y="386" width="374" height="35.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logar">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="5gA-dK-c5V" kind="presentation" id="FVh-aF-qHI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HaW-Mf-sIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0PF-kW-HZL"/>
+                            <constraint firstItem="DlO-jS-6Wg" firstAttribute="top" secondItem="9J5-Te-K6l" secondAttribute="bottom" constant="8" id="7qE-Wb-dPJ"/>
+                            <constraint firstItem="ofS-u1-UFE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A4g-M6-TQC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HaW-Mf-sIi" secondAttribute="trailing" constant="20" id="Cdo-zq-Wqh"/>
+                            <constraint firstItem="OpD-D7-ZAK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eyj-ln-bNf"/>
+                            <constraint firstItem="9J5-Te-K6l" firstAttribute="top" secondItem="fEQ-MY-gO2" secondAttribute="bottom" constant="8" id="Jyf-h4-fgU"/>
+                            <constraint firstItem="fEQ-MY-gO2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="167" id="KAq-fe-mej"/>
+                            <constraint firstItem="HaW-Mf-sIi" firstAttribute="top" secondItem="DlO-jS-6Wg" secondAttribute="bottom" constant="8" id="Mcs-Mh-Moi"/>
+                            <constraint firstItem="OpD-D7-ZAK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MhX-pN-n0A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9J5-Te-K6l" secondAttribute="trailing" constant="20" id="PZW-eL-Fsn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ofS-u1-UFE" secondAttribute="trailing" constant="20" id="PmL-lm-Kud"/>
+                            <constraint firstItem="9J5-Te-K6l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Q7L-Q8-kbl"/>
+                            <constraint firstItem="ofS-u1-UFE" firstAttribute="top" secondItem="HaW-Mf-sIi" secondAttribute="bottom" constant="40" id="Vbx-Y5-NUa"/>
+                            <constraint firstItem="DlO-jS-6Wg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c9V-Fu-OOu"/>
+                            <constraint firstItem="fEQ-MY-gO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jQ9-db-hX0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8yL-7Q-igb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZH1-3a-Ydn">
+            <objects>
+                <viewController id="5gA-dK-c5V" customClass="ViewController" customModule="AutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="STu-c4-vKl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APOS LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SN-vo-byI">
+                                <rect key="frame" x="157.5" y="410.5" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1o-b7-wUb">
+                                <rect key="frame" x="20" y="439" width="374" height="36"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sair">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logout:" destination="5gA-dK-c5V" eventType="touchUpInside" id="won-u7-azv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DkT-yJ-cRy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t1o-b7-wUb" firstAttribute="top" secondItem="1SN-vo-byI" secondAttribute="bottom" constant="7.5" id="Gk7-jy-bd0"/>
+                            <constraint firstItem="t1o-b7-wUb" firstAttribute="leading" secondItem="DkT-yJ-cRy" secondAttribute="leading" constant="20" id="GxA-gJ-FM2"/>
+                            <constraint firstItem="DkT-yJ-cRy" firstAttribute="trailing" secondItem="t1o-b7-wUb" secondAttribute="trailing" constant="20" id="evM-dz-7ib"/>
+                            <constraint firstItem="1SN-vo-byI" firstAttribute="centerY" secondItem="STu-c4-vKl" secondAttribute="centerY" id="s8B-yh-suE"/>
+                            <constraint firstItem="1SN-vo-byI" firstAttribute="centerX" secondItem="STu-c4-vKl" secondAttribute="centerX" id="uBz-A4-Rtk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eHP-8j-VIZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsS-V3-6f4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rm_branco" width="295" height="314"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
