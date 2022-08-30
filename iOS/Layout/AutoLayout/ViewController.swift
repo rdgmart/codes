@@ -9,9 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelWelcome: UILabel!
+    var loginUser:String = ""
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+            
+        if(loginUser != ""){
+            labelWelcome.text = "Welcome " + loginUser
+        }else{
+            labelWelcome.text = "Hello unknown user"
+        }
     }
 
     @IBAction func logout(_ sender: UIButton) {
