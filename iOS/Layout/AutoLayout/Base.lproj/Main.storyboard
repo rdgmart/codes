@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1o-b7-wUb">
-                                <rect key="frame" x="20" y="772" width="374" height="36"/>
+                                <rect key="frame" x="20" y="772.5" width="374" height="35.5"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -117,16 +117,34 @@
                                     <action selector="logout:" destination="5gA-dK-c5V" eventType="touchUpInside" id="won-u7-azv"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-dx-MZS">
+                                <rect key="frame" x="77" y="370.5" width="260" height="101"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7G-VT-J99">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="101"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="bt_fuel"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIE-CT-Egn">
+                                        <rect key="frame" x="149" y="0.0" width="111" height="101"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="bt_doc_merge"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DkT-yJ-cRy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DkT-yJ-cRy" firstAttribute="bottom" secondItem="t1o-b7-wUb" secondAttribute="bottom" constant="34" id="0kF-xG-Xk8"/>
+                            <constraint firstItem="ffE-dx-MZS" firstAttribute="centerY" secondItem="STu-c4-vKl" secondAttribute="centerY" id="0su-FO-tcv"/>
                             <constraint firstItem="1SN-vo-byI" firstAttribute="leading" secondItem="DkT-yJ-cRy" secondAttribute="leading" constant="20" id="6Qc-H9-YeE"/>
                             <constraint firstItem="1SN-vo-byI" firstAttribute="top" secondItem="DkT-yJ-cRy" secondAttribute="top" constant="10" id="6vH-fg-OOK"/>
                             <constraint firstItem="1SN-vo-byI" firstAttribute="centerX" secondItem="STu-c4-vKl" secondAttribute="centerX" id="825-Yd-5G3"/>
+                            <constraint firstItem="ffE-dx-MZS" firstAttribute="leading" secondItem="DkT-yJ-cRy" secondAttribute="leading" constant="77" id="EOX-XG-80N"/>
                             <constraint firstItem="t1o-b7-wUb" firstAttribute="leading" secondItem="DkT-yJ-cRy" secondAttribute="leading" constant="20" id="GxA-gJ-FM2"/>
-                            <constraint firstItem="DkT-yJ-cRy" firstAttribute="trailing" secondItem="t1o-b7-wUb" secondAttribute="trailing" constant="20" id="evM-dz-7ib"/>
+                            <constraint firstItem="ffE-dx-MZS" firstAttribute="centerX" secondItem="STu-c4-vKl" secondAttribute="centerX" id="ZtK-7C-gI8"/>
+                            <constraint firstItem="DkT-yJ-cRy" firstAttribute="trailing" secondItem="ffE-dx-MZS" secondAttribute="trailing" constant="77" id="gX9-Z8-KE6"/>
                             <constraint firstItem="DkT-yJ-cRy" firstAttribute="trailing" secondItem="1SN-vo-byI" secondAttribute="trailing" constant="20" id="zoj-Nt-HoR"/>
                         </constraints>
                     </view>
@@ -141,6 +159,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bt_doc_merge" width="87" height="87"/>
+        <image name="bt_fuel" width="87" height="87"/>
         <image name="rm_branco" width="295" height="314"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
