@@ -19,4 +19,5 @@
 ## Criar o projeto frontend 
 > yarn create vite frontend --template react-ts
 ## Criar o projeto backend
->  Spring Initializr - https://start.spring.io/
+> Spring Initializr - https://start.spring.io/
+> Install the Heroku CLI
