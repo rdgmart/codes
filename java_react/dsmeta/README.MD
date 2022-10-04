@@ -1,6 +1,5 @@
 # DevSuperior - Semana Java React - Evento ocorrido entre os dias 05 a 11 setembro 2022. 
-## Professor Nelio Alves
-> https://github.com/devsuperior/sds-dsmeta
+## Professor Nelio Alves - https://github.com/devsuperior/sds-dsmeta
 
 <div> 
   <a href="https://www.youtube.com/devsuperior" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
@@ -20,4 +19,19 @@
 > yarn create vite frontend --template react-ts
 ## Criar o projeto backend
 > Spring Initializr - https://start.spring.io/
+
+# Heroku
 > Install the Heroku CLI
+## Comandos
+```bash
+heroku -v
+heroku login
+heroku git:remote -a <nome-do-app>
+git remote -v
+git subtree push --prefix java_react/dsmeta/backend heroku main
+```
+
+## URL teste:
+- Sales (https://dsmeta-rdgmart.herokuapp.com/sales)
+- Sales by date (https://dsmeta-rdgmart.herokuapp.com/sales?minDate=2022-01-01&maxDate=2022-03-31)
+- Notification (https://dsmeta-rdgmart.herokuapp.com/sales/53/notification)
