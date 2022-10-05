@@ -35,3 +35,17 @@ git subtree push --prefix java_react/dsmeta/backend heroku main
 - Sales (https://dsmeta-rdgmart.herokuapp.com/sales)
 - Sales by date (https://dsmeta-rdgmart.herokuapp.com/sales?minDate=2022-01-01&maxDate=2022-03-31)
 - Notification (https://dsmeta-rdgmart.herokuapp.com/sales/53/notification)
+
+# Deploy no Netlify
+- https://www.netlify.com/
+- acrescente `window.React = React` no seu main.tsx
+- Deploy básico
+  - Base directory: java_react/dsmeta/frontend
+  - Build command: yarn build
+  - Publish directory: java_react/dsmeta/frontend/dist
+  - Variáveis de ambiente:
+    - VITE_BACKEND_URL --> coloque a url de acesso do backend (heroku nesse caso)
+
+- Configurações adicionais
+  - Site settings -> Domain Management: (colocar o nome que você quiser) -> Ex: dsmeta-rdgmart
+  - Deploys -> Trigger deploy
