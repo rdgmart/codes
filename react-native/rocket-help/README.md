@@ -29,21 +29,6 @@
     npm install -g expo-cli
 ```
 
-### Para criar o projeto
-```bash
-    expo init NOME-DO-PROJETO
-       bare and minimal, just the essentials to get you started
-```
-
-#### Configurar o typescript no projeto
-- Abrir no vscode e trocar o App.js para App.tsx
-- Criar na raiz do projeto o arquivo tsconfig.json (sem conteudo) que o typescript utiliza para definir suas configurações
-- Ao iniciar o projeto com expo vai identificar as configurações com typescript e vai perguntar se deseja utilizar.
-```bash
-   expo start
-   Yes
-```
-
 ## Expo Go
 - App utilizado para instalar/executar o app em desenvolvimento no device (fisico ou emulador). 
 - No emulador é instalado automaticamente.
@@ -52,3 +37,31 @@
 ## VSCODE
 ### Add Extensions
 > R Components - https://marketplace.visualstudio.com/items?itemName=rodrigorgtic.rcomponent
+
+
+## Para criar o projeto
+```bash
+    expo init NOME-DO-PROJETO
+       bare and minimal, just the essentials to get you started
+```
+
+### Configurar o typescript no projeto
+- Abrir no vscode e trocar o App.js para App.tsx
+- Criar na raiz do projeto o arquivo tsconfig.json (sem conteudo) que o typescript utiliza para definir suas configurações
+- Ao iniciar o projeto com expo vai identificar as configurações com typescript e vai perguntar se deseja utilizar.
+```bash
+   expo start
+   Yes
+```
+
+### Nativebase 
+- https://docs.nativebase.io/install-expo
+- https://docs.nativebase.io/customizing-theme
+
+### react-native-svg-transformer
+- https://github.com/kristerkari/react-native-svg-transformer
+```bash
+   yarn add --dev react-native-svg-transformer
+   config metro.config.js
+   config declaration.d.ts
+```
