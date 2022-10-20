@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input as InputNativeBase, IInputProps } from 'native-base';
 
 export function Input({... rest}: IInputProps) {
@@ -12,6 +11,11 @@ export function Input({... rest}: IInputProps) {
         fontFamily="body"
         color="white"
         placeholderTextColor="gray.300"
+        _focus={{
+            borderWidth: 1,
+            borderColor: "gray.500",
+            bg: "gray.700"
+        }}
         {... rest}
     />
   );
