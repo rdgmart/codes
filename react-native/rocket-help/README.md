@@ -65,3 +65,11 @@
    config metro.config.js
    config declaration.d.ts
 ```
+
+### React Navigation
+- https://reactnavigation.org/docs/getting-started/
+```bash
+    yarn add @react-navigation/native
+    npx expo install react-native-screens react-native-safe-area-context
+    yarn add @react-navigation/native-stack
+```
