@@ -73,3 +73,27 @@
     npx expo install react-native-screens react-native-safe-area-context
     yarn add @react-navigation/native-stack
 ```
+
+### React Native Firebase
+- https://firebase.google.com/?hl=pt-br
+- https://rnfirebase.io/
+```bash
+    yarn add @react-native-firebase/app
+```
+- Configuration Expo:
+> Open file app.json and add:
+```
+    "plugins":[
+      "@react-native-firebase/app"
+    ],
+    "android": {
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+```
+- Prebuild 
+```bash
+    npx expo prebuild --npm
+```
