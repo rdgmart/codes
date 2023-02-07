@@ -1,4 +1,4 @@
-package com.rockethelp.newarchitecture;
+package com.rdgmart.rockethelp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.rockethelp.BuildConfig;
-import com.rockethelp.newarchitecture.components.MainComponentsRegistry;
-import com.rockethelp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.rdgmart.rockethelp.BuildConfig;
+import com.rdgmart.rockethelp.newarchitecture.components.MainComponentsRegistry;
+import com.rdgmart.rockethelp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
