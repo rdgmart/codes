@@ -97,3 +97,14 @@
 ```bash
     npx expo prebuild --npm
 ```
+
+# Install the authentication and firestore module
+```bash
+  yarn add @react-native-firebase/auth
+  yarn add @react-native-firebase/firestore
+```
+
+# If you're developing your app using iOS, run this command
+```bash
+  cd ios/ && pod install --repo-update
+```
