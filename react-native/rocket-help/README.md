@@ -104,7 +104,13 @@
   yarn add @react-native-firebase/firestore
 ```
 
-# If you're developing your app using iOS, run this command
+# If you're developing your app using iOS:
+- Open xcode > build phases > Link binary with Libraries > add hermes.xcframework
+- xcode > general > Frameworks, Libraries and Embedded Content > hermes.xcframework > change to  Embed & Sign 
 ```bash
-  cd ios/ && pod install --repo-update
+  yarn install 
+  cd ios/ 
+  rm -rf Podfile.lock
+  pod install --repo-update
+  npx react-native run-ios
 ```
