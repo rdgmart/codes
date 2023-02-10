@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { HStack, IconButton, useTheme, VStack, Text, Heading, FlatList, Center } from 'native-base';
 import { ChatTeardrop, ChatTeardropText, SignOut } from 'phosphor-react-native';
+
+
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 import Logo from '../assets/logo_secondary.svg'
 
@@ -31,6 +35,15 @@ export function Home() {
         navigation.navigate('details', {orderId});
     }
 
+    function handleLogout(){
+        auth()
+        .signOut()
+        .catch((error)=>{
+            console.log(error);
+            return Alert.alert('Sair', 'Não foi possível processar a solicitação.');    
+        });
+    }
+
     return (
         <VStack flex={1} pb={6} bg="gray.700">
             <HStack
@@ -45,6 +58,7 @@ export function Home() {
 
                 <IconButton
                     icon={<SignOut size={26} color={colors.gray[300]} />}
+                    onPress={handleLogout}
                 />
             </HStack>
 
