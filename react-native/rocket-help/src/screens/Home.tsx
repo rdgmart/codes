@@ -1,29 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { HStack, IconButton, useTheme, VStack, Text, Heading, FlatList, Center } from 'native-base';
 import { ChatTeardrop, ChatTeardropText, SignOut } from 'phosphor-react-native';
 
-
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 import Logo from '../assets/logo_secondary.svg'
 
 import { Filter } from '../components/Filter';
-import { Order, OrderProps } from '../components/Order';
 import { Button } from '../components/Button';
+import {Loading} from '../components/Loading';
+import { Order, OrderProps } from '../components/Order';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
 
+import {dateFormat} from '../utils/firestoreDateFormat';
+
 export function Home() {
+    const [isLoading, setIsLoading] = useState(true);
     const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
     const [orders, setOrders] = useState<OrderProps[]>([
-        {
+        /*{
             id: "123",
             patrimony: "rdgmart-999",
             when: '25/10/2022 16:55',
             status: 'open'
-        }
-    ])
+        }*/
+    ]);
     const navigation = useNavigation();
     const { colors } = useTheme();
 
@@ -43,6 +47,33 @@ export function Home() {
             return Alert.alert('Sair', 'Não foi possível processar a solicitação.');    
         });
     }
+
+    useEffect(()=> {
+        setIsLoading(true);
+
+        const subscriber = 
+            firestore()
+            .collection('orders')
+            .where('status', '==', statusSelected)
+            .onSnapshot(snapshot=>{
+                const data = snapshot.docs.map(doc=>{
+                    const {patrimony, description, status,created_at} = doc.data();
+                    return{
+                        id: doc.id,
+                        patrimony,
+                        description,
+                        status,
+                        when: dateFormat(created_at)
+                    }
+                });
+
+                setOrders(data);
+                setIsLoading(false);
+            });
+        
+        return subscriber;
+
+    }, [statusSelected]);
 
     return (
         <VStack flex={1} pb={6} bg="gray.700">
@@ -84,7 +115,9 @@ export function Home() {
 
                 </HStack>
 
-                <FlatList
+                {
+                    isLoading ? <Loading/> :
+                    <FlatList
                     data={orders}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => <Order data={item} onPress={()=> handleOpenDetails(item.id)} />}
@@ -100,6 +133,9 @@ export function Home() {
                         </Center>
                     )}
                 />
+
+                }
+                
             </VStack>
 
             <Button title='Nova Solicitação' onPress={handleNewOrder}/>
