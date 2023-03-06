@@ -115,3 +115,15 @@
   pod install --repo-update
   npx react-native run-ios
 ```
+# If you're developing your app using Android:
+## Config
+```bash
+npx react-native info
+export ANDROID_HOME=/Users/yourname/Library/Android/sdk
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+```
+## Run Android
+```bash
+npx react-native run-android
+```
