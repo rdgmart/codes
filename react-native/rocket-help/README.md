@@ -100,6 +100,7 @@
 
 # Install the authentication and firestore module
 ```bash
+  yarn add @react-native-firebase/app
   yarn add @react-native-firebase/auth
   yarn add @react-native-firebase/firestore
 ```
@@ -113,4 +114,16 @@
   rm -rf Podfile.lock
   pod install --repo-update
   npx react-native run-ios
+```
+# If you're developing your app using Android:
+## Config
+```bash
+npx react-native info
+export ANDROID_HOME=/Users/yourname/Library/Android/sdk
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+```
+## Run Android
+```bash
+npx react-native run-android
 ```
