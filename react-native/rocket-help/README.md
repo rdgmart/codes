@@ -100,6 +100,7 @@
 
 # Install the authentication and firestore module
 ```bash
+  yarn add @react-native-firebase/app
   yarn add @react-native-firebase/auth
   yarn add @react-native-firebase/firestore
 ```
