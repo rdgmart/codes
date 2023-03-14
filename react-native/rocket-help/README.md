@@ -131,6 +131,14 @@ npx react-native run-android
 # Social Authentication
 ## Google
 - https://github.com/react-native-google-signin/google-signin#project-setup-and-initialization 
+- https://docs.expo.dev/guides/google-authentication/
 ```bash
   yarn add @react-native-google-signin/google-signin
+  cd android/app 
+  keytool -keystore debug.keystore -list -v
 ```
+- https://console.cloud.google.com/apis/credentials?project=YOUR_PROJECT_FIREBASE
+> Configure a chave SHA-1 criando uma credential 'OAuth Client ID'. 
+
+- https://console.cloud.google.com/apis/credentials/consent?project=YOUR_PROJECT_FIREBASE
+> HABILITE os e-mails que poderão autenticar na sua aplicação
