@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert } from "react-native";
 import { VStack, Heading, Icon, useTheme, HStack, IconButton } from "native-base";
 import { Envelope, Key, GoogleLogo, FacebookLogo } from "phosphor-react-native";
 
 import auth from '@react-native-firebase/auth'
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import Logo from '../assets/logo_primary.svg';
 
@@ -43,12 +44,32 @@ export function SignIn() {
     }
 
     const handleGoogleLogin = async () => {
-        return Alert.alert('Entrar Google', 'Ainda está pendente...');
+
+        const {idToken} = await GoogleSignin.signIn();
+
+        const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+        setIsLoading(true);
+        await auth()
+            .signInWithCredential(googleCredential)
+            .catch((error) => {
+                console.log(error);
+                setIsLoading(false);
+
+                return Alert.alert('Entrar Google', 'Não foi possível acessar.');
+            });
     }
 
     const handleFacebookLogin = async () => {
         return Alert.alert('Entrar Facebook', 'Ainda está pendente...');
     }
+
+    useEffect(()=>{
+        GoogleSignin.configure(
+        {
+            webClientId:"YOUR_WEB_CLIENT_ID",
+        });
+    }, [])
 
     return (
         <>
