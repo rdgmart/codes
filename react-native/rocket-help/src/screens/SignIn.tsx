@@ -4,7 +4,7 @@ import { VStack, Heading, Icon, useTheme, HStack, IconButton } from "native-base
 import { Envelope, Key, GoogleLogo, FacebookLogo } from "phosphor-react-native";
 
 import auth from '@react-native-firebase/auth'
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 
 import Logo from '../assets/logo_primary.svg';
 
@@ -17,6 +17,10 @@ export function SignIn() {
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    GoogleSignin.configure({
+        webClientId:"YOUR_WEB_CLIENT_ID_TYPE_3",
+    });
 
     function handleSignIn() {
         if (!email || !password) {
@@ -56,6 +60,14 @@ export function SignIn() {
                 console.log(error);
                 setIsLoading(false);
 
+                if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+                    return Alert.alert('Entrar Google', 'Processo cancelado pelo usuário');
+                } else if (error.code === statusCodes.IN_PROGRESS) {
+                    return Alert.alert('Entrar Google', 'Processo de autenticação em andamento...');
+                } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+                    return Alert.alert('Entrar Google', 'Serviço de autenticação indisponível. Verifique sua conexão ou tente mais tarde.');
+                } 
+
                 return Alert.alert('Entrar Google', 'Não foi possível acessar.');
             });
     }
@@ -63,13 +75,6 @@ export function SignIn() {
     const handleFacebookLogin = async () => {
         return Alert.alert('Entrar Facebook', 'Ainda está pendente...');
     }
-
-    useEffect(()=>{
-        GoogleSignin.configure(
-        {
-            webClientId:"YOUR_WEB_CLIENT_ID",
-        });
-    }, [])
 
     return (
         <>
