@@ -127,3 +127,10 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 ```bash
 npx react-native run-android
 ```
+
+# Social Authentication
+## Google
+- https://github.com/react-native-google-signin/google-signin#project-setup-and-initialization 
+```bash
+  yarn add @react-native-google-signin/google-signin
+```
