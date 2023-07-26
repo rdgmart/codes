@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <h1>Seu Endereço Atual</h1>
+    <h2 id="address"></h2>
+    <script>
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(pos=>{
+                let API_KEY = "";
+                fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=${API_KEY}`)
+                .then(resp => resp.json())
+                .then(data => {
+                    let address = document.getElementById('address');
+                    if(data && Array.isArray(data.results) && data.results.length > 0){
+                        address.append(data.results[0].formatted_address);
+                    }else{
+                        address.append("Habilite a permissão e tente novamente");
+                    }
+                })
+                .catch(err => console.log('Errors ', err));
+            })
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
