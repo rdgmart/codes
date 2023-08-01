@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+</head>
+
+<body>
+    <h1>Escolha uma imagem</h1>
+    <input type="file" id="file-uploader" accept=".jpg, .jpeg, .png">
+    <p id="info-file"></p>
+    <div id="image-grid"></div>
+
+    <h1>Escolha um video</h1>
+    <input type="file" id="file-uploader2" accept="video/*">
+    <p id="info-file"></p>
+    <div id="video-grid"></div>
+
+    <script>
+
+        document.getElementById('file-uploader2').onchange = e => {
+            const file = e.target.files[0];
+            const url = URL.createObjectURL(file);
+            const addvideo = ` <video controls="controls" src=" ${url} " type="video/mp4" width="400px" height="200px"></video>
+                    <span><i class="fa fa-trash"></i></span>`
+            
+            document.getElementById('video-grid').innerHTML = addvideo;
+        };
+
+        const fileUploader = document.getElementById('file-uploader');
+        const reader = new FileReader();
+        const imageGrid = document.getElementById('image-grid');
+
+        fileUploader.addEventListener('change', (event) => {
+            const files = event.target.files;
+            const file = files[0];
+            reader.readAsDataURL(file);
+
+            reader.addEventListener('load', (event) => {
+                const img = document.createElement('img');
+                imageGrid.appendChild(img);
+                img.src = event.target.result;
+                img.alt = file.name;
+
+                const name = file.name;
+                const type = file.type ? file.type : 'NA';
+                const size = file.size;
+                const lastModified = file.lastModified;
+
+                const feedback = document.getElementById('info-file');
+                const msg = ` Nome: ${name} <br/>
+                    Tamanho: ${size} <br/>
+                    Tipo: ${type} <br/>
+                    Alterado: ${new Date(lastModified)}`;
+
+                feedback.innerHTML = msg;
+            });
+        });
+    </script>
+</body>
+
+</html>
